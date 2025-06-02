@@ -16,7 +16,7 @@ export const Input = styled.TextInput.attrs({
   placeholderTextColor: '#A0A0A0'
 })`
   width: 90%;
-  height: 50px;
+  height: 8%;
   background-color: #FFF;
   border-radius: 8px;
   padding-left: 15px;
@@ -28,12 +28,11 @@ export const Input = styled.TextInput.attrs({
 
 export const SubmitButton = styled.TouchableOpacity`
   width: 90%;
-  height: 50px;
+  height: 6%;
   align-items: center;
   justify-content: center;
   background-color: #00b94a;
   border-radius: 8px;
-  margin-top: 10px;
 `;
 
 export const SubmitText = styled.Text`
@@ -44,7 +43,7 @@ export const SubmitText = styled.Text`
 
 export const TypeButton = styled.TouchableOpacity`
   flex: 1;
-  height: 50px;
+  height: 35%;
   border-radius: 8px;
   align-items: center;
   justify-content: center;

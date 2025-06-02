@@ -80,8 +80,8 @@ export default function Registrar() {
               activeOpacity={0.8}
               style={{
                 backgroundColor: tipo === 'receita' ? '#00b94a' : '#ddd',
-                marginRight: 7,
-                marginLeft: 22
+                marginRight: "2%",
+                marginLeft: "7%"
               }}
               onPress={() => setTipo('receita')}
             >
@@ -94,7 +94,7 @@ export default function Registrar() {
               activeOpacity={0.8}
               style={{
                 backgroundColor: tipo === 'despesa' ? '#dc3545' : '#ddd',
-                marginRight: 22
+                marginRight: "7%"
               }}
               onPress={() => setTipo('despesa')}
             >
