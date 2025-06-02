@@ -4,6 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 // Importa os componentes de tela para login e cadastro
 import Login from '../pages/Login';
 import Cadastro from '../pages/Cadastro';
+import Registrar from '../pages/Registrar';
 
 // Cria um stack de navegação para autenticação
 const AuthStack = createNativeStackNavigator();
@@ -24,6 +25,11 @@ function AuthRoutes() {
             <AuthStack.Screen
                 name="Cadastro" // Nome da rota para cadastro
                 component={Cadastro} // Componente para cadastro
+            />
+            <AuthStack.Screen
+                name="Registrar"
+                component={Registrar}
+                options={{ headerShown: false }}
             />
         </AuthStack.Navigator>
     );

@@ -20,6 +20,11 @@ export default function Login() {
   // Obtem a função de navegação para direcionar o usuário para outras telas
   const navigation = useNavigation();
 
+  // Função chamada ao pressionar o botão "Acessar"
+  function handleLogin() {
+    navigation.navigate('Registrar');
+  }
+
   return (
       // Componente de fundo da tela
       <Background>
@@ -43,7 +48,7 @@ export default function Login() {
           </AreaInput>
 
           {/* Botão de submissão para acessar */}
-          <SubmitButton activeOpacity={0.8}>
+          <SubmitButton activeOpacity={0.8} onPress={handleLogin}>
             <SubmitText>Acessar</SubmitText>
           </SubmitButton>
 
