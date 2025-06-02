@@ -2,12 +2,11 @@ import React, { useState } from 'react';
 import {
   KeyboardAvoidingView,
   Platform,
-  TouchableOpacity,
   Alert,
-  View, 
-  Text, 
+  View,
+  Text
 } from 'react-native';
-
+import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 
 import {
@@ -18,7 +17,7 @@ import {
   SubmitText,
   TypeButton,
   TypeText,
-} from './style'; 
+} from './style';
 
 export default function Registrar() {
   const navigation = useNavigation();
@@ -27,7 +26,18 @@ export default function Registrar() {
   const [valor, setValor] = useState('');
   const [tipo, setTipo] = useState('receita');
 
-  function handleSubmit() {
+  async function saveTransaction(transaction) {
+    try {
+      const existing = await AsyncStorage.getItem('transactions');
+      const transactions = existing ? JSON.parse(existing) : [];
+      transactions.push(transaction);
+      await AsyncStorage.setItem('transactions', JSON.stringify(transactions));
+    } catch (e) {
+      Alert.alert('Erro', 'Não foi possível salvar a transação.');
+    }
+  }
+
+  async function handleSubmit() {
     if (nome === '' || valor === '') {
       Alert.alert('Atenção', 'Preencha todos os campos!');
       return;
@@ -47,8 +57,12 @@ export default function Registrar() {
       dataRegistro: new Date().toISOString(),
     };
 
-    navigation.navigate('//COLOCA O ENDERECO DA HOME AQUI', { transactionData: formData });
+    await saveTransaction(formData);
 
+    // Navega para a Home
+    navigation.navigate('Home');
+
+    // Limpa os campos
     setNome('');
     setValor('');
     setTipo('receita');
