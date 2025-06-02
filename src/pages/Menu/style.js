@@ -11,7 +11,7 @@ export default StyleSheet.create({
     zIndex: 10,
   },
     menuBox: {  
-      width: '30%',   
+      width: '50%',   
       height: '100%',
       backgroundColor: 'white',
       padding: 20,

@@ -14,9 +14,20 @@ export default StyleSheet.create({
     alignSelf: 'center',
     marginBottom: 30,
   },
-  menuButton: {
+  menuButtonContainer: {
     position: 'absolute',
-    top: 10,
-    backgroundColor: 'red',
-  }
+    top: 43,
+    left: 20,
+    padding: 10,
+    backgroundColor: '#f0f4ff',
+    borderRadius: 8,
+    zIndex: 10,
+  },
+  bar: {
+    width: 25,
+    height: 3,
+    backgroundColor: '#000',
+    marginVertical: 2,
+    borderRadius: 2,
+  },
 });

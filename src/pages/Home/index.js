@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { View, Text, Button } from 'react-native';
-import Menu from '../Menu'; // Importa o Menu
+import { View, Text, Pressable } from 'react-native';
+import Menu from '../Menu';
 import styles from './style';
 
 const Home = () => {
@@ -8,9 +8,14 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.welcome}>Minhas movimentações</Text>
+      {/* Botão hambúrguer */}
+      <Pressable style={styles.menuButtonContainer} onPress={() => setMostrarMenu(true)}>
+        <View style={styles.bar} />
+        <View style={styles.bar} />
+        <View style={styles.bar} />
+      </Pressable>
 
-      <Button style={styles.menuButton} title="" onPress={() => setMostrarMenu(true)} />
+      <Text style={styles.welcome}>Minhas movimentações</Text>
 
       {mostrarMenu && <Menu onClose={() => setMostrarMenu(false)} />}
     </View>
