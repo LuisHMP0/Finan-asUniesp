@@ -22,7 +22,7 @@ export default function Login() {
 
   // Função chamada ao pressionar o botão "Acessar"
   function handleLogin() {
-    navigation.navigate('Registrar');
+    navigation.navigate('Home');
   }
 
   return (
